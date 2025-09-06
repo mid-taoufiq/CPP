@@ -6,29 +6,39 @@
 /*   By: tibarike <tibarike@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 14:46:18 by tibarike          #+#    #+#             */
-/*   Updated: 2025/09/05 12:47:35 by tibarike         ###   ########.fr       */
+/*   Updated: 2025/09/06 16:18:41 by tibarike         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-std::string	cut_option(const std::string &option)
+std::string	cut_option(const std::string option)
 {
 	if (option.length() > 10)
 		return (option.substr(0, 9) + ".");
 	return (option);
 }
 
+Phonebook::Phonebook()
+{
+	iter = 0;
+	count = 0;
+}
+
 int Phonebook::add_contacts(void)
 {
+	if (iter == 8)
+	{
+		iter = 0;
+	}
     if (!contacts[iter].get_contact())
-    {
-        iter = 0;
+	{
         return (0);
-    }
-    iter = iter + 1;
-    if (iter == 8);
-        iter = 0;
+	}
+	iter++;
+	if (count < 8)
+		count++;
+	return (1);
 }
 
 int Phonebook::search_contacts(void)
@@ -39,11 +49,12 @@ int Phonebook::search_contacts(void)
     std::cout << "|" << std::setw(10) << "index";
 	std::cout << "|" << std::setw(10) << "first name";
 	std::cout << "|" << std::setw(10) << "last name";
-	std::cout << "|" << std::setw(10) << "phonenumber" << "|";
+	std::cout << "|" << std::setw(10) << "nickname";
+	std::cout << "|" << std::setw(10) << "number" << "|";
 	std::cout << std::endl;
 	for (int i = 0; i < 8; i++)
 	{
-		if (i < iter)
+		if (i < count)
 		{
 		    std::cout << "|" << std::setw(10) << i;
 			std::cout << "|" << std::setw(10) << cut_option(contacts[i].show_firstname());
@@ -53,26 +64,29 @@ int Phonebook::search_contacts(void)
 			std::cout << "|" << std::endl;
 		}
 		else
-			std::cout << "|" << std::setw(10) << " ";
+		{
+			std::cout << "|" << std::setw(10) << i;
 			std::cout << "|" << std::setw(10) << " ";
 			std::cout << "|" << std::setw(10) << " ";
 			std::cout << "|" << std::setw(10) << " ";
 			std::cout << "|" << std::setw(10) << " ";
 			std::cout << "|" << std::endl;
+		}
 	}
-	if (!std::getline(std::cin, option))
+	std::cout << "index: ";
+	if (!std::getline(std::cin, option) || option.empty())
+		return (std::cout << "wrong option!!" << std::endl, 0);
+	for (size_t i = 0; i < option.size(); i++)
 	{
-        std::cout << "wrong option!!" << std::endl;
-		return (0);
+		if (!std::isdigit(option[i]))
+			return (std::cout << "incorrect number!!" << std::endl, 0);
 	}
 	index = atoi(option.c_str());
-	if (!index)
-	{
-		std::cout << "wrong number!!" << std::endl;
-		return (0);
-	}
-	std::cout << contacts[index].show_firstname();
-	std::cout << contacts[index].show_lastname();
-	std::cout << contacts[index].show_nickname();
-	std::cout << contacts[index].show_phonenumber();
+	if (index > 7)
+		return (std::cout << "wrong range!!" << std::endl, 0);
+	std::cout << contacts[index].show_firstname() << std::endl;
+	std::cout << contacts[index].show_lastname() << std::endl;
+	std::cout << contacts[index].show_nickname() << std::endl;
+	std::cout << contacts[index].show_phonenumber() << std::endl;
+	return (1);
 }

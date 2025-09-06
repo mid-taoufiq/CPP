@@ -1,4 +1,4 @@
-NAME = megaphone
+NAME = phonebook
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRC = main.cpp \
@@ -11,7 +11,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ) contact.hpp phonebook.hpp
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
-
+#%.o
 clean:
 	rm -f $(OBJ)
 

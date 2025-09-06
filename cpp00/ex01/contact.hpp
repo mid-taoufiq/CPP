@@ -6,7 +6,7 @@
 /*   By: tibarike <tibarike@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 11:48:22 by tibarike          #+#    #+#             */
-/*   Updated: 2025/09/05 12:15:57 by tibarike         ###   ########.fr       */
+/*   Updated: 2025/09/06 14:16:39 by tibarike         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CONTACT_HPP
 
 #include <iostream>
+#include <cstdlib>
 #include <iomanip>
 #include <string>
 

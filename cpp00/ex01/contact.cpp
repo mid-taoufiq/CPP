@@ -6,7 +6,7 @@
 /*   By: tibarike <tibarike@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/02 13:25:27 by tibarike          #+#    #+#             */
-/*   Updated: 2025/09/04 09:53:36 by tibarike         ###   ########.fr       */
+/*   Updated: 2025/09/06 16:17:03 by tibarike         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int is_valid(std::string str)
 {
-    for(int i = 0; str.size(); i++)
+    for(size_t i = 0; i < str.length(); i++)
     {
         if (!isprint(str[i]))
             return (0);
-        if (!isspace(str[i]))
+        if (isspace(str[i]))
             return (0);
     }
     return (1);
@@ -26,34 +26,46 @@ int is_valid(std::string str)
 
 int    contact::get_contact()
 {
+    std::string fname = first_name;
+    std::string lname = last_name;
+    std::string nname = nickname;
+    std::string pnumber = phone_number;
+    std::string secret = darkest_secret;
+
     std::cout << "first name: ";
     if (!std::getline(std::cin, first_name) || first_name.empty() || !is_valid(first_name))
     {
         std::cout << "wrong input" << std::endl;
+        first_name = fname;
         return (0);
     }    
     std::cout << "last name: ";
     if (!std::getline(std::cin, last_name) || last_name.empty() || !is_valid(last_name))
     {
         std::cout << "wrong input" << std::endl;
+        last_name = lname; first_name = fname;
         return (0);
     }    
     std::cout << "nickname: ";
     if (!std::getline(std::cin, nickname) || nickname.empty() || !is_valid(nickname))
     {
         std::cout << "wrong input" << std::endl;
+        nickname = nname; last_name = lname; first_name = fname;
         return (0);
     }    
     std::cout << "phone number: ";
     if (!std::getline(std::cin, phone_number) || phone_number.empty() || !is_valid(phone_number))
     {
         std::cout << "wrong input" << std::endl;
+        phone_number = pnumber; nickname = nname; last_name = lname; first_name = fname;
         return (0);
     }    
     std::cout << "darkest secret: ";
     if (!std::getline(std::cin, darkest_secret) || darkest_secret.empty() || !is_valid(darkest_secret))
     {
         std::cout << "wrong input" << std::endl;
+        darkest_secret = secret;
+        phone_number = pnumber; nickname = nname; last_name = lname; first_name = fname;
         return (0);
     }
     return (1);
