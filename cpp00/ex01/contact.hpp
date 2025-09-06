@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tibarike <tibarike@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 19:20:52 by tibarike          #+#    #+#             */
-/*   Updated: 2025/09/02 20:14:01 by tibarike         ###   ########.fr       */
+/*   Created: 2025/09/02 11:48:22 by tibarike          #+#    #+#             */
+/*   Updated: 2025/09/05 12:15:57 by tibarike         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CONTACT_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 
 class contact
@@ -26,7 +27,10 @@ class contact
         std::string darkest_secret;
     public:
         int get_contact();
-        void show_contact();
+        std::string show_firstname() const {return (first_name);}
+        std::string show_lastname() const {return (last_name);}
+        std::string show_nickname() const {return (nickname);}
+        std::string show_phonenumber() const {return (phone_number);}		
 };
 
 #endif

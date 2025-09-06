@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tibarike <tibarike@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 19:16:22 by tibarike          #+#    #+#             */
-/*   Updated: 2025/09/02 21:21:51 by tibarike         ###   ########.fr       */
+/*   Created: 2025/09/02 10:21:42 by tibarike          #+#    #+#             */
+/*   Updated: 2025/09/05 10:20:39 by tibarike         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ int main()
         if (line == "ADD")
         {
             if (!phonebook.add_contacts())
-                return (0);
+                continue ;
         }
         else if (line == "SEARCH")
-            phonebook.search_contacts();
+            if (!phonebook.search_contacts())
+				continue ;
         else if (line == "EXIT")
             break;
         else
