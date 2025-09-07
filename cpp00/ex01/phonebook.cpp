@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tibarike <tibarike@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 14:46:18 by tibarike          #+#    #+#             */
-/*   Updated: 2025/09/06 16:18:41 by tibarike         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "phonebook.hpp"
 
 std::string	cut_option(const std::string option)
@@ -84,9 +72,10 @@ int Phonebook::search_contacts(void)
 	index = atoi(option.c_str());
 	if (index > 7)
 		return (std::cout << "wrong range!!" << std::endl, 0);
-	std::cout << contacts[index].show_firstname() << std::endl;
-	std::cout << contacts[index].show_lastname() << std::endl;
-	std::cout << contacts[index].show_nickname() << std::endl;
-	std::cout << contacts[index].show_phonenumber() << std::endl;
+	std::cout << "first name: " << contacts[index].show_firstname() << std::endl;
+	std::cout << "last name: " << contacts[index].show_lastname() << std::endl;
+	std::cout << "nickname: " << contacts[index].show_nickname() << std::endl;
+	std::cout << "phonenumber: " << contacts[index].show_phonenumber() << std::endl;
+	std::cout << "darkest secret: " << contacts[index].show_darkestsecret() << std::endl;
 	return (1);
 }

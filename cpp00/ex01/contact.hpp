@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   contact.hpp                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tibarike <tibarike@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 11:48:22 by tibarike          #+#    #+#             */
-/*   Updated: 2025/09/06 14:16:39 by tibarike         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
@@ -28,10 +16,11 @@ class contact
         std::string darkest_secret;
     public:
         int get_contact();
-        std::string show_firstname() const {return (first_name);}
-        std::string show_lastname() const {return (last_name);}
-        std::string show_nickname() const {return (nickname);}
-        std::string show_phonenumber() const {return (phone_number);}		
+        std::string show_firstname() {return (first_name);}
+        std::string show_lastname() {return (last_name);}
+        std::string show_nickname() {return (nickname);}
+        std::string show_phonenumber() {return (phone_number);}
+        std::string show_darkestsecret() {return (darkest_secret);}
 };
 
 #endif

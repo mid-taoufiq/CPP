@@ -1,16 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   contact.cpp                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: tibarike <tibarike@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/02 13:25:27 by tibarike          #+#    #+#             */
-/*   Updated: 2025/09/06 16:17:03 by tibarike         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "contact.hpp"
+
+std::string contact::show_firstname() {return (first_name);}
+std::string contact::show_lastname() {return (last_name);}
+std::string contact::show_nickname() {return (nickname);}
+std::string contact::show_phonenumber() {return (phone_number);}
+std::string contact::show_darkestsecret() {return (darkest_secret);}
 
 int is_valid(std::string str)
 {
