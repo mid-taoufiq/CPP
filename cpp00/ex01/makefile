@@ -11,7 +11,10 @@ all: $(NAME)
 
 $(NAME): $(OBJ) contact.hpp phonebook.hpp
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
-#%.o
+
+%.o: %.c
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 clean:
 	rm -f $(OBJ)
 
