@@ -8,10 +8,10 @@ OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) Account.hpp
+$(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
-%.o: %.c
+%.o: %.c Account.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:

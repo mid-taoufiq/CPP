@@ -9,10 +9,10 @@ OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ) contact.hpp phonebook.hpp
+$(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
-%.o: %.c
+%.o: %.c contact.hpp phonebook.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:

@@ -16,11 +16,11 @@ class contact
         std::string darkest_secret;
     public:
         int get_contact();
-        std::string show_firstname() {return (first_name);}
-        std::string show_lastname() {return (last_name);}
-        std::string show_nickname() {return (nickname);}
-        std::string show_phonenumber() {return (phone_number);}
-        std::string show_darkestsecret() {return (darkest_secret);}
+        std::string show_firstname();
+        std::string show_lastname();
+        std::string show_nickname();
+        std::string show_phonenumber();
+        std::string show_darkestsecret();
 };
 
 #endif

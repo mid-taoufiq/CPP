@@ -70,7 +70,7 @@ int Phonebook::search_contacts(void)
 			return (std::cout << "incorrect number!!" << std::endl, 0);
 	}
 	index = atoi(option.c_str());
-	if (index > 7)
+	if (index > 7 || index < 0)
 		return (std::cout << "wrong range!!" << std::endl, 0);
 	std::cout << "first name: " << contacts[index].show_firstname() << std::endl;
 	std::cout << "last name: " << contacts[index].show_lastname() << std::endl;
