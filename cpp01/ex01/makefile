@@ -1,9 +1,10 @@
-NAME = Account
+NAME = Zombie
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = tests.cpp \
-	Account.cpp
-
+SRC = main.cpp \
+	Zombie.cpp \
+	zombieHorde.cpp
+	
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)

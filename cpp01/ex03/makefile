@@ -1,9 +1,11 @@
-NAME = Account
+NAME = Weapon
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = tests.cpp \
-	Account.cpp
-
+SRC = main.cpp \
+	HumanA.cpp \
+	HumanB.cpp \
+	Weapon.cpp
+	
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -11,7 +13,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
-%.o: %.c Account.hpp
+%.o: %.c HumanB.hpp HumanA.hpp Weapon.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:

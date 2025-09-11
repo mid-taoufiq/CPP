@@ -14,7 +14,7 @@ int	Account::checkAmount( void ) const {return (_amount);}
 
 Account::Account( void )
 {
-
+    
 }
 
 Account::Account( int initial_deposit )
