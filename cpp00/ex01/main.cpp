@@ -14,7 +14,7 @@ int main()
         {
             if (std::cin.eof())
                 break;
-            std::cout << "wrong command!!" << std::endl;
+            std::cerr << "wrong command!!" << std::endl;
             continue;
         }
         if (line == "ADD")
@@ -31,7 +31,7 @@ int main()
             break;
         else
         {
-            std::cout << "wrong command!!" << std::endl;
+            std::cerr << "wrong command!!" << std::endl;
             continue;
         }
     }

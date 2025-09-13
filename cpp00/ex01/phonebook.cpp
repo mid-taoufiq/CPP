@@ -63,15 +63,15 @@ int Phonebook::search_contacts(void)
 	}
 	std::cout << "index: ";
 	if (!std::getline(std::cin, option) || option.empty())
-		return (std::cout << "wrong option!!" << std::endl, 0);
+		return (std::cerr << "wrong option!!" << std::endl, 0);
 	for (size_t i = 0; i < option.size(); i++)
 	{
 		if (!std::isdigit(option[i]))
-			return (std::cout << "incorrect number!!" << std::endl, 0);
+			return (std::cerr << "incorrect number!!" << std::endl, 0);
 	}
 	index = atoi(option.c_str());
 	if (index > 7 || index < 0)
-		return (std::cout << "wrong range!!" << std::endl, 0);
+		return (std::cerr << "wrong range!!" << std::endl, 0);
 	std::cout << "first name: " << contacts[index].show_firstname() << std::endl;
 	std::cout << "last name: " << contacts[index].show_lastname() << std::endl;
 	std::cout << "nickname: " << contacts[index].show_nickname() << std::endl;

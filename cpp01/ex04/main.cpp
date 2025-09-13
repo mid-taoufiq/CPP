@@ -23,10 +23,9 @@ int main(int argc, char *argv[])
 	}
 	while ((found_index = text.find(replaced_str, start)) != std::string::npos)
 	{
-		outfile << text.substr(start, found_index - start);
-		outfile << argv[3];
-		start = (found_index + replaced_str.length());
+		text.erase(found_index, replaced_str.length());
+		text.insert(found_index, argv[3]);
 	}
-	outfile << text.substr(start, found_index - start);
+	outfile << text;
 	return 0;
 }
