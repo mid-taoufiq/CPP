@@ -39,13 +39,10 @@ int Harl::complain(std::string level)
     {
         case 0:
             (tmp.*debug_ptr)();
-            break;
         case 1:
             (tmp.*info_ptr)();
-            break;
         case 2:
             (tmp.*warning_ptr)();
-            break;
         case 3:
             (tmp.*error_ptr)();
             break;
