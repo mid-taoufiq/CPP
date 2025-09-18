@@ -5,9 +5,8 @@ int main(int argc, char **argv)
     Harl harl;
     if (argc != 2)  
     {
-        std::cout << "[ERROR]\nThis is unacceptable! I want to speak to the manager now." << std::endl;
+        std::cout << "[ERROR]\nEnter two argument ex: ./Harl DEBUG" << std::endl;
         return(1);
     }
-    if (!harl.complain(argv[1]))
-        return(1);
+    return(harl.complain(argv[1]));
 }

@@ -12,19 +12,31 @@ int main(int argc, char *argv[])
 	std::size_t found_index = 0;
 	std::size_t start = 0;
 	std::string replaced_str = argv[2];
+	std::string replace_str = argv[3];
+	if (replaced_str.empty())
+	{
+		std::cerr << "first string shouldn't be empty" << std::endl;
+		return (1);
+	}
 	std::ifstream infile(argv[1]);
-	std::string outfile_tmp = argv[1];
-	std::string outfile_name = outfile_tmp + ".replace";
-	std::ofstream outfile(outfile_name);
 	if (!getline(infile, text, '\0'))
 	{
 		std::cerr << "getline fail" << std::endl;
+		return (1);
+	}
+	std::string outfile_tmp = argv[1];
+	std::string outfile_name = outfile_tmp + ".replace";
+	std::ofstream outfile(outfile_name.c_str()); //char * machi std::string
+	if (!outfile.is_open())
+	{
+		std::cerr << "can't open outfile\n";
 		return (1);
 	}
 	while ((found_index = text.find(replaced_str, start)) != std::string::npos)
 	{
 		text.erase(found_index, replaced_str.length());
 		text.insert(found_index, argv[3]);
+		start = (found_index + replace_str.length());
 	}
 	outfile << text;
 	return 0;

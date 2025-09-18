@@ -2,8 +2,11 @@
 
 int main()
 {
-    Zombie *zombies = zombieHorde(3, "fool");
-    for (int i = 0; i < 3; i++)
+    int N = 3;
+    Zombie *zombies = zombieHorde(N, "fool");
+    if (!zombies)
+        return (1);
+    for (int i = 0; i < N; i++)
     {
         zombies[i].annouce();
     }

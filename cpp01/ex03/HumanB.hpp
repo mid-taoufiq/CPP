@@ -9,11 +9,12 @@ class HumanB
 private:
 	std::string name;
 	Weapon *club;
+
 public:
 	HumanB(std::string name);
+	~HumanB();
 	void setWeapon(Weapon &new_club);
 	void	attack();
-	~HumanB();
 };
 
 #endif

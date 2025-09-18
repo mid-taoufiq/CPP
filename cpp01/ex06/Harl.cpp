@@ -39,16 +39,19 @@ int Harl::complain(std::string level)
     {
         case 0:
             (tmp.*debug_ptr)();
+            /* fall through */ // to silence the warning
         case 1:
             (tmp.*info_ptr)();
+            /* fall through */
         case 2:
             (tmp.*warning_ptr)();
+            /* fall through */
         case 3:
             (tmp.*error_ptr)();
             break;
         default:
             std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
-            return (0);
+            return (1);
     }
-    return (1);
+    return (0);
 }
