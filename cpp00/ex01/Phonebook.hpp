@@ -1,12 +1,12 @@
 #ifndef PHONEBOOK_HPP
 #define PHONEBOOK_HPP
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 class Phonebook
 {
     private:
-        contact contacts[8];
+        Contact contacts[8];
         int iter;
         int count;
     public:

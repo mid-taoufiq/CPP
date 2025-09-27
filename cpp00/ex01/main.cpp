@@ -1,4 +1,4 @@
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 int main()
 {
@@ -10,7 +10,7 @@ int main()
     while (1)
     {
         std::cout << "type one of these commands [ADD] [SEARCH] [EXIT]:";
-        if (!std::getline(std::cin, line) || line.empty())
+        if (!std::getline(std::cin, line))
         {
             if (std::cin.eof())
                 break;

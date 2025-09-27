@@ -6,7 +6,7 @@
 #include <iomanip>
 #include <string>
 
-class contact
+class Contact
 {
     private:
         std::string first_name;
