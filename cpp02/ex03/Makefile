@@ -1,10 +1,8 @@
-NAME = phonebook
+NAME = Fixed
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = main.cpp \
-	Contact.cpp \
-	Phonebook.cpp
-	
+SRC = main.cpp Fixed.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -12,7 +10,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
-%.o: %.cpp Contact.hpp Phonebook.hpp
+%.o: %.cpp Fixed.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:

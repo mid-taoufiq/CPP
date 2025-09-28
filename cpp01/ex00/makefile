@@ -11,7 +11,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
-%.o: %.c Zombie.hpp
+%.o: %.cpp Zombie.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
