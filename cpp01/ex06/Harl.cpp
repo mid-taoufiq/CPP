@@ -38,11 +38,19 @@ int Harl::complain(std::string level)
     {
         case 0:
             (this->*debug_ptr)();
-            /* fall through */ // to silence the warning
+            (this->*info_ptr)();
+            (this->*warning_ptr)();
+            (this->*error_ptr)();
+            break;
         case 1:
             (this->*info_ptr)();
+            (this->*warning_ptr)();
+            (this->*error_ptr)();
+            break;
         case 2:
             (this->*warning_ptr)();
+            (this->*error_ptr)();
+            break;
         case 3:
             (this->*error_ptr)();
             break;

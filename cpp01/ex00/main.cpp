@@ -1,6 +1,3 @@
-//Files to turn in: Makefile, main.cpp, Zombie.{h, hpp}, Zombie.cpp, zombieHorde.cpp
-//Makefile smito Makefile machi makefile
-
 #include "Zombie.hpp"
 
 int main()

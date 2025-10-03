@@ -9,6 +9,7 @@ int main(int argc, char **argv)
 		std::cerr << "arguments error" << std::endl;
 		return (1);
 	}
-	append_outfile(argv);
+	if (!append_outfile(argv))
+		return (1);
 	return 0;
 }

@@ -1,6 +1,6 @@
 #include "Replace.hpp"
 
-void	replace_loop(std::string file_name, std::string text, std::string replaced_str, std::string replace_str)
+int	replace_loop(std::string file_name, std::string text, std::string replaced_str, std::string replace_str)
 {
 	std::string outfile_name = file_name + ".replace";
 	std::ofstream outfile(outfile_name.c_str());
@@ -8,8 +8,8 @@ void	replace_loop(std::string file_name, std::string text, std::string replaced_
 	size_t start = 0;
 	if (!outfile.is_open())
 	{
-		std::cerr << "can't open outfile\n";
-		exit(1);
+		std::cerr << "can't open outfile" << std::endl;
+		return (0);
 	}
 	while ((found_index = text.find(replaced_str, start)) != std::string::npos)
 	{
@@ -18,31 +18,37 @@ void	replace_loop(std::string file_name, std::string text, std::string replaced_
 		start = (found_index + replace_str.length());
 	}
 	outfile << text;
+	return (1);	
 }
 
-void append_outfile(char **argv)
+int append_outfile(char **argv)
 {
 	std::string file_name = argv[1];
 	std::string replaced_str = argv[2];
 	std::string replace_str = argv[3];
 	std::string text;
-	std::ifstream infile(file_name.c_str());
-	if (file_name.empty() || replace_str.empty())
+	if (file_name.empty() || replaced_str.empty())
 	{
 		std::cerr << "first argument or second argument is empty" << std::endl;
-		exit(1);	
+		return (0);
+	}
+	std::ifstream infile(file_name.c_str());
+	if (!infile.is_open())
+	{
+		std::cerr << "can't open infile" << std::endl;
+		return (0);
 	}
 	if (!getline(infile, text, '\0'))
 	{
 		std::cerr << "getline fail" << std::endl;
-		exit(1);
+		return (0);
 	}
 	std::string outfile_name = file_name + ".replace";
 	std::ofstream outfile(outfile_name.c_str());
 	if (!outfile.is_open())
 	{
-		std::cerr << "can't open outfile\n";
-		exit(1);
+		std::cerr << "can't open outfile" << std::endl;
+		return (0);	
 	}
-	replace_loop(file_name, text, replaced_str, replace_str);
+	return (replace_loop(file_name, text, replaced_str, replace_str));
 }

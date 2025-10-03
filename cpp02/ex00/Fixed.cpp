@@ -8,17 +8,17 @@ Fixed::Fixed()
 
 Fixed::Fixed(const Fixed &other)
 {
-	std::cout << "copy constructor called" << std::endl;
 	fp_number = other.fp_number;
+	std::cout << "copy constructor called" << std::endl;
 }
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		fp_number = other.fp_number;	
 	}
+	std::cout << "Copy assignment operator called" << std::endl;
 	return (*this);
 }
 
