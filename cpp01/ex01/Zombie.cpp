@@ -14,5 +14,5 @@ Zombie::Zombie(void) {}
 
 Zombie::~Zombie(void)
 {
-	std::cout << name << std::endl;
+	std::cout << name << " is destroyed" << std::endl;
 }

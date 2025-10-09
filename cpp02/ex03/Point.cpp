@@ -19,9 +19,9 @@ Point &Point::operator=(const Point &other){
 	std::cout << "copy assignement operator called" <<  std::endl;
 	if (this != &other)
 	{
-
+		this->~Point();
+		(new)this Point(other);
 	}
-	(void)other;
 	return (*this);
 }
 

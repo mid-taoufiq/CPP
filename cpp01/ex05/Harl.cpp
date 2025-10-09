@@ -27,6 +27,10 @@ void Harl::complain(std::string level)
     for (int i = 0; i < 4; i++)
     {
         if (level == levels[i])
+        {
             (this->*function_array[i])();
+            return;
+        }
     }
+    std::cout << "Not available!!" << std::endl;
 }
