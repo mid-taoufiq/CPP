@@ -1,13 +1,13 @@
 #include "ScravTrap.hpp"
-ScravTrap::ScravTrap(const std::string &Name) : ClapTrap(Name){
+ScravTrap::ScravTrap(const std::string &_name) : ClapTrap(_name){
 	Hit_points = 100;
 	Energy_points = 50;
 	Attack_damage = 20;
-	std::cout << "ScravTrap " << Name << " created!" << std::endl;
+	std::cout << "ScravTrap " << name << " created!" << std::endl;
 }
 
-ScravTrap::ScravTrap(const ScravTrap &other) : ClapTrap(Name){
-	Name = other.Name;
+ScravTrap::ScravTrap(const ScravTrap &other) : ClapTrap(other){
+	name = other.name;
 	Hit_points = other.Hit_points;
 	Energy_points = other.Energy_points;
 	Attack_damage = other.Attack_damage;
@@ -29,13 +29,13 @@ void ScravTrap::attack(const std::string& target){
 		return ;
 	}
 	Energy_points--;
-	std::cout << "ClapTrap " << Name << " attacks " << target << " , causing " << Attack_damage << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << name << " attacks " << target << " , causing " << Attack_damage << " points of damage!" << std::endl;
 }
 
 void ScravTrap::guardGate(void){
-	std::cout << "ScravTrap " << Name << " is now in Gate keeper mode." << std::endl;
+	std::cout << "ScravTrap " << name << " is now in Gate keeper mode." << std::endl;
 }
 
 ScravTrap::~ScravTrap(){
-	std::cout << "ScravTrap " << Name << " destroyed!" << std::endl;
+	std::cout << "ScravTrap " << name << " destroyed!" << std::endl;
 }

@@ -1,12 +1,13 @@
 #include "FragTrap.hpp"
-FragTrap::FragTrap(const std::string &Name) : ScravTrap(Name){
+
+FragTrap::FragTrap(const std::string &_name) : ClapTrap(_name){
 	Energy_points = 100;
 	Attack_damage = 30;
-	std::cout << "FragTrap " << Name << " created!" << std::endl;
+	std::cout << "FragTrap " << _name << " created!" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &other) : ScravTrap(Name){
-	Name = other.Name;
+FragTrap::FragTrap(const FragTrap &other) : ClapTrap(other){
+	name = other.name;
 	Hit_points = other.Hit_points;
 	Energy_points = other.Energy_points;
 	Attack_damage = other.Attack_damage;
@@ -16,12 +17,16 @@ FragTrap::FragTrap(const FragTrap &other) : ScravTrap(Name){
 FragTrap& FragTrap::operator=(const FragTrap &other){
 	if (this != &other)
 	{
-		ScravTrap::operator=(other);
+		ClapTrap::operator=(other);
 	}
 	std::cout << "Copy assignment operator called" << std::endl;
 	return (*this);
 }
 
+void FragTrap::highFivesGuys(void){
+	std::cout << "FragTrap " << name << " requests a high five" << std::endl;
+}
+
 FragTrap::~FragTrap(){
-	std::cout << "FragTrap " << Name << " destroyed!" << std::endl;
+	std::cout << "FragTrap " << name << " destroyed!" << std::endl;
 }
