@@ -16,7 +16,7 @@ Cat &Cat::operator=(Cat &other){
     if (this != &other)
     {
         this->type = other.type;
-        cat_brain = other.cat_brain;
+        *cat_brain = *other.cat_brain;
     }
     std::cout << this->type << " copy assignement operator called" << std::endl;
     return (*this);
