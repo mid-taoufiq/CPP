@@ -10,7 +10,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
-%.o: %.cpp Fixed.hpp
+%.o: %.cpp Animal.hpp Cat.hpp Dog.hpp WrongAnimal.hpp WrongCat.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:

@@ -36,5 +36,5 @@ void	DiamondTrap::whoAmI(void)
 
 DiamondTrap::~DiamondTrap()
 {
-
+	std::cout << "DiamondTrap " << name << " destroyed!" << std::endl;
 }
