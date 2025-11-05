@@ -1,15 +1,23 @@
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name){
-	Name = name;
+ClapTrap::ClapTrap(){
+	name = name;
 	Hit_points = 10;
 	Energy_points = 10;
 	Attack_damage = 0;
-	std::cout << "ClapTrap " << Name << " created!" << std::endl;
+	std::cout << "ClapTrap default contructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string _name){
+	name = _name;
+	Hit_points = 10;
+	Energy_points = 10;
+	Attack_damage = 0;
+	std::cout << "ClapTrap " << name << " created!" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &other){
-	Name = other.Name;
+	name = other.name;
 	Hit_points = other.Hit_points;
 	Energy_points = other.Energy_points;
 	Attack_damage = other.Attack_damage;
@@ -19,7 +27,7 @@ ClapTrap::ClapTrap(const ClapTrap &other){
 ClapTrap &ClapTrap::operator=(const ClapTrap &other){
 	if (this != &other)
 	{
-		Name = other.Name;
+		name = other.name;
 		Hit_points = other.Hit_points;
 		Energy_points = other.Energy_points;
 		Attack_damage = other.Attack_damage;
@@ -33,7 +41,7 @@ void ClapTrap::attack(const std::string& target){
 		return ;
 	}
 	Energy_points--;
-	std::cout << "ClapTrap " << Name << " attacks " << target << " , causing " << Attack_damage << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << name << " attacks " << target << " , causing " << Attack_damage << " points of damage!" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
@@ -45,7 +53,7 @@ void ClapTrap::takeDamage(unsigned int amount){
 	{
 		Hit_points -= amount;
 	}
-	std::cout << "ClapTrap " << Name << " takes " << amount << " of damage points!" << std::endl;
+	std::cout << "ClapTrap " << name << " took " << amount << " of damage points!" << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
@@ -54,9 +62,9 @@ void ClapTrap::beRepaired(unsigned int amount){
 	}
 	Energy_points--;
 	Hit_points += amount;
-	std::cout << "ClapTrap " << Name << " regains " << amount << " Hit points!" << std::endl;
+	std::cout << "ClapTrap " << name << " regains " << amount << " Hit points!" << std::endl;
 }
 
 ClapTrap::~ClapTrap(){
-	std::cout << "ClapTrap " << Name << " destroyed!" << std::endl;
+	std::cout << "ClapTrap " << name << " destroyed!" << std::endl;
 }

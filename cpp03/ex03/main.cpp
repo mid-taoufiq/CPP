@@ -1,5 +1,5 @@
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(){
-	
+
 }

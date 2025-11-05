@@ -6,9 +6,10 @@
 class ScravTrap : public ClapTrap
 {
 public:
-	ScravTrap(const std::string &Name);
-	ScravTrap(const ScravTrap &other);
-	ScravTrap &operator=(const ScravTrap &other);
+	ScravTrap();
+	ScravTrap(std::string _name);
+	ScravTrap(ScravTrap &other);
+	ScravTrap &operator=(ScravTrap &other);
 	void attack(const std::string& target);
 	void guardGate(void);
 	~ScravTrap();
