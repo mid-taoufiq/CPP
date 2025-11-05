@@ -1,9 +1,9 @@
 #include "ScravTrap.hpp"
 
 ScravTrap::ScravTrap(){
-	Hit_points = 10;
-	Energy_points = 10;
-	Attack_damage = 0;
+	Hit_points = 100;
+	Energy_points = 50;
+	Attack_damage = 20;
 	std::cout << "ScravTrap default contructor called" << std::endl;
 }
 
@@ -15,10 +15,6 @@ ScravTrap::ScravTrap(std::string _name) : ClapTrap(_name){
 }
 
 ScravTrap::ScravTrap(ScravTrap &other) : ClapTrap(other){
-	name = other.name;
-	Hit_points = other.Hit_points;
-	Energy_points = other.Energy_points;
-	Attack_damage = other.Attack_damage;
 	std::cout << "copy constructor called" << std::endl;
 }
 
