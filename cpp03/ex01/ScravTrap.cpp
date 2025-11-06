@@ -15,7 +15,7 @@ ScravTrap::ScravTrap(std::string _name) : ClapTrap(_name){
 }
 
 ScravTrap::ScravTrap(ScravTrap &other) : ClapTrap(other){
-	std::cout << "copy constructor called" << std::endl;
+	std::cout << "ScravTrap " << name << " copy constructor called" << std::endl;
 }
 
 ScravTrap& ScravTrap::operator=(ScravTrap &other){
@@ -23,16 +23,17 @@ ScravTrap& ScravTrap::operator=(ScravTrap &other){
 	{
 		ClapTrap::operator=(other);
 	}
-	std::cout << "ScravTrap Copy assignment operator called" << std::endl;
+	std::cout << "ScravTrap " << name << " copy assignment operator called" << std::endl;
 	return (*this);
 }
 
-void ScravTrap::attack(const std::string &target){
+
+void ScravTrap::attack(const std::string& target){
 	if (!Hit_points && !Energy_points){
 		return ;
 	}
 	Energy_points--;
-	std::cout << "ScravTrap " << name << " attacks " << target << " , causing " << Attack_damage << " points of damage!" << std::endl;
+	std::cout << "ClapTrap " << name << " attacks " << target << " , causing " << Attack_damage << " points of damage!" << std::endl;
 }
 
 void ScravTrap::guardGate(void){
