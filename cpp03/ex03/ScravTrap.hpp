@@ -5,6 +5,8 @@
 
 class ScravTrap : virtual public ClapTrap
 {
+protected:
+	unsigned int Energy_points;
 public:
 	ScravTrap();
 	ScravTrap(std::string _name);
