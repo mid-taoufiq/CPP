@@ -13,7 +13,7 @@ FragTrap::FragTrap(std::string _name) : ClapTrap(_name){
 }
 
 FragTrap::FragTrap(FragTrap &other) : ClapTrap(other){
-	std::cout << "copy constructor called" << std::endl;
+	std::cout << "FragTrap " << name << " copy constructor called" << std::endl;
 }
 
 FragTrap& FragTrap::operator=(FragTrap &other){
@@ -21,7 +21,7 @@ FragTrap& FragTrap::operator=(FragTrap &other){
 	{
 		ClapTrap::operator=(other);
 	}
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "FragTrap " << name << " copy assignment operator called" << std::endl;
 	return (*this);
 }
 
