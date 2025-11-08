@@ -1,8 +1,9 @@
-#include "ScravTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(){
-	ScravTrap scrav1("scrav1");
-    ScravTrap scrav2(scrav1);
+	ScavTrap scrav1("scrav1");
+    ScavTrap scrav2(scrav1);
+	scrav1.attack("scav2");
     scrav1.guardGate();
     scrav2.guardGate();
 }

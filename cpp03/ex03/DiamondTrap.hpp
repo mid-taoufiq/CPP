@@ -2,10 +2,10 @@
 #define DIAMONDTRAP_HPP
 
 #include "FragTrap.hpp"
-#include "ScravTrap.hpp"
+#include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
-class DiamondTrap : public ScravTrap, public FragTrap
+class DiamondTrap : public ScavTrap, public FragTrap
 {
 	private:
 		std::string name;

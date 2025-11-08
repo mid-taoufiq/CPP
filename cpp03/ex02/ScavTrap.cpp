@@ -29,11 +29,16 @@ ScavTrap& ScavTrap::operator=(ScavTrap &other){
 
 
 void ScavTrap::attack(const std::string& target){
-	if (!Hit_points && !Energy_points){
+	if (!Hit_points){
+		std::cout << "ScavTrap " << name << "has no hit points" << std::endl;
+		return ;
+	}
+	if (!Energy_points){
+		std::cout << "ScavTrap " << name << "has no energy points" << std::endl;
 		return ;
 	}
 	Energy_points--;
-	std::cout << "ClapTrap " << name << " attacks " << target << " , causing " << Attack_damage << " points of damage!" << std::endl;
+	std::cout << "ScavTrap " << name << " attacks " << target << " , causing " << Attack_damage << " points of damage!" << std::endl;
 }
 
 void ScavTrap::guardGate(void){
