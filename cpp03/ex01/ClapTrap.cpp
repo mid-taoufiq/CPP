@@ -37,7 +37,12 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other){
 }
 
 void ClapTrap::attack(const std::string& target){
-	if (!Hit_points && !Energy_points){
+	if (!Hit_points){
+		std::cout << "ClapTrap " << name << " has no hit points" << std::endl;
+		return ;
+	}
+	if (!Energy_points){
+		std::cout << "ClapTrap " << name << " has no energy points" << std::endl;
 		return ;
 	}
 	Energy_points--;
@@ -57,7 +62,12 @@ void ClapTrap::takeDamage(unsigned int amount){
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
-	if (!Hit_points || !Energy_points){
+	if (!Hit_points){
+		std::cout << "ClapTrap " << name << " has no hit points" << std::endl;
+		return ;
+	}
+	if (!Energy_points){
+		std::cout << "ClapTrap " << name << " has no energy points" << std::endl;
 		return ;
 	}
 	Energy_points--;
