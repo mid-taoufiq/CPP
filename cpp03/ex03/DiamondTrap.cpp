@@ -5,7 +5,7 @@ DiamondTrap::DiamondTrap(){
 	Hit_points = FragTrap::Hit_points;
 	Energy_points = ScavTrap::Energy_points;
 	Attack_damage = FragTrap::Attack_damage;
-	std::cout << "DiamondTrap default contructor called" << std::endl;
+	std::cout << "DiamondTrap default contructor called!" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(std::string _name) : ClapTrap(_name + "_ClapTrap_name"), ScavTrap(_name), FragTrap(_name){
@@ -38,7 +38,7 @@ void DiamondTrap::attack(const std::string& target){
 }
 
 void DiamondTrap::whoAmI(void){
-	std::cout << "DiamondTrap name is " << name << ", ClapTrap name is" << ClapTrap::name << std::endl;
+	std::cout << "DiamondTrap name is " << name << ", ClapTrap name is" << ClapTrap::name << "!" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap(){
