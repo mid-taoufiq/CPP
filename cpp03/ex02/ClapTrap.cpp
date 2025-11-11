@@ -50,6 +50,11 @@ void ClapTrap::attack(const std::string& target){
 }
 
 void ClapTrap::takeDamage(unsigned int amount){
+	if ((int)amount < 0)
+	{
+		std::cout << "damage amount cant be negative" << std::endl;
+		return;
+	}
 	if (amount > Hit_points)
 	{
 		Hit_points = 0;
@@ -62,6 +67,11 @@ void ClapTrap::takeDamage(unsigned int amount){
 }
 
 void ClapTrap::beRepaired(unsigned int amount){
+	if ((int)amount < 0)
+	{
+		std::cout << "repair amount cant be negative" << std::endl;
+		return;
+	}
 	if (!Hit_points){
 		std::cout << "ClapTrap " << name << " has no hit points!" << std::endl;
 		return ;

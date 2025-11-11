@@ -1,6 +1,7 @@
 #include "FragTrap.hpp"
 
 FragTrap::FragTrap(){
+	Hit_points = 100;
 	Energy_points = 100;
 	Attack_damage = 30;
 	std::cout << "FragTrap default contructor called!" << std::endl;
