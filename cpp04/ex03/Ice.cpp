@@ -30,14 +30,13 @@ Ice &Ice::operator=(const Ice &other)
 
 void Ice::use(ICharacter &target)
 {
-    std::cout << "* shoots an ice bolt at " << target.name << " *" << std::endl;
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
 
 AMateria *Ice::clone() const
 {
-    return new Ice();
+    return new Ice(this->type);
 }
-
 
 Ice::~Ice()
 {
