@@ -10,7 +10,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJ)
 
-%.o: %.cpp ClapTrap.hpp ScravTrap.hpp FragTrap.hpp DiamondTrap.hpp
+%.o: %.cpp ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
