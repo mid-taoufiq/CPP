@@ -7,6 +7,8 @@
 class Character : public ICharacter{
 	protected:
 		AMateria *materia[4];
+		AMateria *trash[4];
+		int		iter;
 		std::string Name;
 	public:
 		Character();
@@ -16,8 +18,8 @@ class Character : public ICharacter{
 		std::string const &getName() const;
 		void equip(AMateria* m);
 		void unequip(int idx);
-		void use(int idx, Character& target);
-		~Character();
+		void use(int idx, ICharacter& target);
+		virtual ~Character();
 };
 
 #endif

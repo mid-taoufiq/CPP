@@ -32,7 +32,7 @@ std::string const &AMateria::getType() const{return type;}
 
 void AMateria::use(ICharacter &target)
 {
-    std::cout << "use methode called" << std::endl;
+    (void)target;
 }
 
 AMateria::~AMateria()
