@@ -45,8 +45,8 @@ void MateriaSource::learnMateria(AMateria *m)
 	{
 		if (!materia[i]){
 			materia[i] = m;
-			// std::cout << "type:type:type:type:type:type:type:type:type:type:type:type:type:type: " <<materia[i]->getType() << std::endl;
-			break;
+			std::cout << "type: " <<materia[i]->getType() << std::endl;
+			return ;
 		}
 		if (i == 3){
 			delete m;
@@ -69,6 +69,9 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 MateriaSource::~MateriaSource()
 {
 	for (int i = 0; i < 4; i++)
-		delete materia[i];
+	{
+		if (materia[i])
+			delete materia[i];
+	}
 	std::cout << "MateriaSource destructor called" << std::endl;
 }

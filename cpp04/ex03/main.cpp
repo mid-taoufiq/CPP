@@ -12,9 +12,9 @@ int main()
 	ICharacter* Cloud = new Character("Cloud");
 
 	AMateria* tmp;
-	tmp = src->createMateria("Ice");
+	tmp = src->createMateria("ice");
 	Cloud->equip(tmp);
-	tmp = src->createMateria("Cure");
+	tmp = src->createMateria("cure");
 	Cloud->equip(tmp);
 
 	ICharacter* Sephiroth = new Character("Sephiroth");
