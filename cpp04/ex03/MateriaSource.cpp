@@ -26,16 +26,17 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
 		for (int i = 0; i < 4; i++)
 		{
 			if (materia[i])
-				delete materia[i];
+			delete materia[i];
 		}
 		for (int i = 0; i < 4; i++)
 		{
 			if (other.materia[i])
-				materia[i] = other.materia[i]->clone();
+			materia[i] = other.materia[i]->clone();
 			else
-				materia[i] = NULL;
+			materia[i] = NULL;
 		}
 	}
+	std::cout << "MateriaSource copy assignement operator called" << std::endl;
 	return (*this);
 }
 

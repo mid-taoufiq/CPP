@@ -5,26 +5,25 @@
 
 int main()
 {
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+	// IMateriaSource* src = new MateriaSource();
+	// IMateriaSource* src2 = new MateriaSource();
+	// src->learnMateria(new Ice());
+	// src->learnMateria(new Cure());
 
-	ICharacter* Cloud = new Character("Cloud");
+	// src2 = src;
+	// std::cout << src2->createMateria("ice")->getType() << std::endl;
+	
+	// delete src2;
+	// delete src;
+	ICharacter *a = new Character("cloud");
+	ICharacter *b = new Character("seph");
 
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	Cloud->equip(tmp);
-	tmp = src->createMateria("cure");
-	Cloud->equip(tmp);
+	a = b;
 
-	ICharacter* Sephiroth = new Character("Sephiroth");
+	std::cout << a->getName() << std::endl;
+	std::cout << b->getName() << std::endl;
 
-	Cloud->use(0, *Sephiroth);
-	Cloud->use(1, *Sephiroth);
-
-	delete Sephiroth;
-	delete Cloud;
-	delete src;
-
+	delete a;
+	delete b;
 	return 0;
 }
