@@ -25,6 +25,6 @@ int main()
 	delete Sephiroth;
 	delete Cloud;
 	delete src;
-	
+
 	return 0;
 }
