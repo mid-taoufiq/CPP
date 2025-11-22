@@ -5,14 +5,13 @@ WrongCat::WrongCat() : WrongAnimal(){
     std::cout << this->type << " constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(WrongCat &other) : WrongAnimal(){
-    this->type = other.type;
+WrongCat::WrongCat(WrongCat &other) : WrongAnimal(other){
     std::cout << this->type << " copy constructor called" << std::endl;
 }
 
 WrongCat &WrongCat::operator=(WrongCat &other){
     if (this != &other)
-        this->type = other.type;
+        WrongAnimal::operator=(other);
     std::cout << this->type << " copy assignement operator called" << std::endl;
     return (*this);
 }

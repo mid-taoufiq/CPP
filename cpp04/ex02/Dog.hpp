@@ -12,9 +12,9 @@ public:
         Dog();
         Dog(Dog &other);
         Dog &operator=(Dog &other);
-        ~Dog();
+        virtual ~Dog();
         std::string getType() const;
-        void makeSound() const ;
+        virtual void makeSound() const ;
 };
 
 #endif

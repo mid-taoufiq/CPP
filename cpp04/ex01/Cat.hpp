@@ -12,9 +12,9 @@ public:
         Cat();
         Cat(Cat &other);
         Cat &operator=(Cat &other);
-        ~Cat();
+        virtual ~Cat();
         std::string getType() const;
-        void makeSound() const;
+        virtual void makeSound() const;
 };
 
 #endif

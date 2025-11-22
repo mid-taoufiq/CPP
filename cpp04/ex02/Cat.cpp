@@ -6,8 +6,7 @@ Cat::Cat() : AAnimal(){
     std::cout << this->type << " constructor called" << std::endl;
 }
 
-Cat::Cat(Cat &other) : AAnimal(){
-    this->type = other.type;
+Cat::Cat(Cat &other) : AAnimal(other){
     this->cat_brain = new Brain(*other.cat_brain);
     std::cout << this->type << " copy constructor called" << std::endl;
 }
@@ -15,7 +14,7 @@ Cat::Cat(Cat &other) : AAnimal(){
 Cat &Cat::operator=(Cat &other){
     if (this != &other)
     {
-        this->type = other.type;
+        AAnimal::operator=(other);
         *cat_brain = *other.cat_brain;
     }
     std::cout << this->type << " copy assignement operator called" << std::endl;

@@ -9,8 +9,8 @@ public:
     Ice();
 	Ice(const Ice &other);
 	Ice &operator=(const Ice &other);
-	AMateria* clone() const;
-	void use(ICharacter& target);
+	virtual AMateria* clone() const;
+	virtual void use(ICharacter& target);
     virtual ~Ice();
 };
 

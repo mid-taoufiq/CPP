@@ -3,27 +3,45 @@
 #include "Character.hpp"
 #include "MateriaSource.hpp"
 
+
 int main()
 {
-	// IMateriaSource* src = new MateriaSource();
-	// IMateriaSource* src2 = new MateriaSource();
-	// src->learnMateria(new Ice());
-	// src->learnMateria(new Cure());
+	IMateriaSource* shinra = new MateriaSource();
 
-	// src2 = src;
-	// std::cout << src2->createMateria("ice")->getType() << std::endl;
-	
-	// delete src2;
-	// delete src;
-	ICharacter *a = new Character("cloud");
-	ICharacter *b = new Character("seph");
+	shinra->learnMateria(new Ice());
+	shinra->learnMateria(new Cure());
 
-	a = b;
+	ICharacter* cloud = new Character("cloud");
+	AMateria* materia;
 
-	std::cout << a->getName() << std::endl;
-	std::cout << b->getName() << std::endl;
+	materia = shinra->createMateria("ice");
+	cloud->equip(materia);
+	materia = shinra->createMateria("cure");
+	cloud->equip(materia);
 
-	delete a;
-	delete b;
+	ICharacter* sephiroth = new Character("sephiroth");
+
+	cloud->use(0, *sephiroth);
+	cloud->use(1, *sephiroth);
+
+	delete sephiroth;
+	delete cloud;
+	delete shinra;
+
+	std::cout << "-------------------------------------------------------------------" << std::endl;
+
+	ICharacter *zack = new Character("zack");
+	AMateria *materia1 = new Ice();
+	AMateria *materia2 = new Ice();
+
+	zack->equip(materia1);
+	zack->unequip(0);
+	zack->equip(materia1);
+	zack->unequip(0);
+	zack->equip(materia2);
+	zack->unequip(2);
+
+	delete zack;
+
 	return 0;
 }

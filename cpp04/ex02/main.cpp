@@ -4,14 +4,22 @@
 #include "AAnimal.hpp"
 int main()
 {
-    AAnimal *animal[2];
-    animal[0] = new Cat();
-    animal[1] = new Dog();
-
-    animal[0]->makeSound();
-    animal[1]->makeSound();
-
-    delete animal[0];
-    delete animal[1];
+    AAnimal *animal[6];
+    for (int i = 0; i < 3; i++)
+    {
+        animal[i] = new Cat();
+    }
+    for (int i = 3; i < 6; i++)
+    {
+        animal[i] = new Dog();
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        delete animal[i];
+    }
+    for (int i = 3; i < 6; i++)
+    {
+        delete animal[i];
+    }
 return 0;
 }

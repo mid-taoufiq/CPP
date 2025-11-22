@@ -90,6 +90,17 @@ void Character::unequip(int idx)
                 delete trash[i];
             iter = 0;
         }
+        int i = iter - 1;
+        while (i >= 0)
+        {
+            if (trash[i] == materia[idx])
+            {
+                std::cout << "materia " << materia[idx]->getType() << " for character " << Name << " unequiped" << std::endl;
+                materia[idx] = NULL;
+                return ;
+            }
+            i--;
+        }
         trash[iter] = materia[idx];
         iter++;
         std::cout << "materia " << materia[idx]->getType() << " for character " << Name << " unequiped" << std::endl;
